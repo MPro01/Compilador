@@ -1,15 +1,14 @@
-
 <?php
 
-require_once "Parser.php";
-require_once "Tokenizer.php";
-require_once "Evaluator.php";
-require_once "Scope.php";
+require_once __DIR__ . "/src/parser/Parser.php";
+require_once __DIR__ . "/src/lexer/Tokenizer.php";
+require_once __DIR__ . "/src/eval/Evaluator.php";
+require_once __DIR__ . "/src/parser/Scope.php";
 
 function printParserErrors(array $errors): void {
-    echo "Parser errors:", PHP_EOL;
+    echo "Parser errors:" . PHP_EOL;
     foreach ($errors as $error) {
-        echo "\t", $error, PHP_EOL;
+        echo "\t" . $error . PHP_EOL;
     }
 }
 
@@ -36,8 +35,9 @@ while (420 > 69) {
     $result = $evaluator->evaluate($program, $globalScope);
 
     if ($result !== null) {
-        echo $result->inspect(), PHP_EOL;
+        echo $result->inspect() . PHP_EOL;
     } else {
-        echo "null", PHP_EOL;
+        echo "null" . PHP_EOL;
     }
 }
+?>
