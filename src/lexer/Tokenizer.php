@@ -137,7 +137,6 @@ class Tokenizer
     private function readInteger(): string
     {
         $position = $this->position;
-
         while (ctype_digit($this->ch)) {
             $this->readNextChar();
         }
